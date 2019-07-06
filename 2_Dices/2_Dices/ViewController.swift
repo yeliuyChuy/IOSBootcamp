@@ -18,12 +18,19 @@ class ViewController: UIViewController {
     @IBOutlet weak var uiImageView2: UIImageView!
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        updataDiceImage()
     }
 
 
     @IBAction func uiButton1(_ sender: UIButton) {
+        updataDiceImage()
+    }
+    
+    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+        updataDiceImage()
+    }
+    
+    func updataDiceImage(){
         randomDiceIndex1 = Int.random(in: 0 ... 5)
         randomDiceIndex2 = Int.random(in: 0 ... 5)
         
